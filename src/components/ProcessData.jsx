@@ -77,3 +77,5 @@ const ProcessData = ({processId, arrivalTime, burstTime, priority, quantum, proc
 }
 
 export default ProcessData
+
+// git remote add origin https://github.com/AbubakariSadikOsman/simulation.git  
