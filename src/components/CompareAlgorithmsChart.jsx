@@ -1,29 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { CanvasJSChart } from 'canvasjs-react-charts';
 
 const CompareAlgorithmsChart = ({ metrics }) => {
+    const chartRef = useRef(null);
+
     useEffect(() => {
-        // Check if metrics array is not empty
         if (metrics.length > 0) {
-            // Initialize dataPoints array
-            let dataPoints = [];
-            
-            // Populate dataPoints array with metrics data
-            metrics.forEach((metric, index) => {
-                dataPoints.push({
-                    type: "spline",
-                    visible: true,
-                    showInLegend: true,
-                    yValueFormatString: "##.00 milliseconds",
-                    name: metric.algorithm,
-                    dataPoints: [
-                        { label: "Average Waiting Time", y: parseFloat(metric.data.average_waiting_time) },
-                        { label: "Average Response Time", y: parseFloat(metric.data.average_response_time) },
-                        { label: "Average Turnaround Time", y: parseFloat(metric.data.average_turnaround_time) }
-                    ]
-                });
-            });
-            console.log(dataPoints);
-            // Create chart configuration object
+            let dataPoints = metrics.map((metric) => ({
+                type: "spline",
+                visible: true,
+                showInLegend: true,
+                yValueFormatString: "##.00 milliseconds",
+                name: metric.algorithm,
+                dataPoints: [
+                    { label: "Average Waiting Time", y: parseFloat(metric.data.average_waiting_time) },
+                    { label: "Average Response Time", y: parseFloat(metric.data.average_response_time) },
+                    { label: "Average Turnaround Time", y: parseFloat(metric.data.average_turnaround_time) }
+                ]
+            }));
+
             const options = {
                 theme: "light2",
                 exportEnabled: true,
@@ -37,29 +32,30 @@ const CompareAlgorithmsChart = ({ metrics }) => {
                 },
                 axisY: {
                     title: "Time in milliseconds",
-                    interval:1
+                    interval: 1
                 },
                 toolTip: {
-                    shared: "true"
+                    shared: true
                 },
                 legend: {
-                    cursor: "pointer",
+                    cursor: "pointer"
                 },
-                data: dataPoints // Set dataPoints array as data for the chart
+                data: dataPoints
             };
 
-            // Render chart using options configuration
-            const chart = new window.CanvasJS.Chart("comparisonChart", options);
-
-            return () => chart.destroy(); // Cleanup chart on unmount
+            if (chartRef.current) {
+                chartRef.current.render(options);
+            }
         }
-    }, []);
+    }, [metrics]);
 
     return (
-        <div className="w-full h-[700px] bg-gray-100 p-4 rounded-xl">
-            <div id="comparisonChart" style={{ height: "100%", width: "100%" }}></div>
+        <div className="w-full bg-gray-100 p-4 rounded-xl">
+            <div style={{ height: "400px" }}>
+                <CanvasJSChart options={{}} onRef={(ref) => (chartRef.current = ref)} />
+            </div>
         </div>
     );
-}
+};
 
 export default CompareAlgorithmsChart;
