@@ -1,9 +1,3 @@
-# React + Vite
+# CPU Scheduling Visualisation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# cpu_scheduling_visualisation
+This project aims to create a visualization tool that will allow users to interactively explore and compare these different scheduling algorithms.The significance of this project lies in the impact it will have on improving users' understanding of CPU scheduling algorithms and their effects on system performance. By visually simulating and comparing different CPU scheduling algorithms, users will have a more intuitive grasp of how these algorithms work and be able to make informed decisions regarding which algorithm to implement in their own systems.
