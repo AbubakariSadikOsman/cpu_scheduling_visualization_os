@@ -24,7 +24,11 @@ The project’s scope will not include low-level operating system implementation
 
 The CPU Scheduling Visualization Tool will provide an engaging and educational platform for exploring CPU scheduling algorithms. By meeting the objectives outlined above, our project aims to enhance understanding and facilitate learning in the field of operating systems. With clear objectives, well-defined scope, and appropriate technical requirements, we are confident that our project will result in a valuable and impactful educational tool.
 
-# How to host the application on a Local server
+### How to host the application on a Wide Area Network
+
+Click on this link to launch the application: [https://scheduling-visualization-ashm.vercel.app/]
+
+### How to host the application on a Local server
 
 1. Install nodejs on your machine [UNIX, Windows]: Refer to this link [https://nodejs.org/en/learn/getting-started/how-to-install-nodejs] on how to install nodejs
 
