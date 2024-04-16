@@ -38,7 +38,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
     <> 
         { executed && (
             <div className='w-full bg-gray-100 p-4 rounded-xl'>
-                <h2 className='text-[1.4rem] mb-3 font-bold text-center'>Processes Execution By The CPU</h2>
+                <h2 className='text-[1.4rem] my-5 font-bold text-center'>Processes Execution By The CPU</h2>
                 <div className='flex flex-row justify-center'>
                     {processes.map(process => (
                         <div
@@ -104,7 +104,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                     )
                 }
                 
-                <div className='flex flex-row justify-center mt-4'>
+                <div className='flex flex-row justify-center mt-10'>
                     {Object.entries(colorMap).map(([processId, color]) => (
                         <div key={processId} className='flex flex-row justify-center items-center gap-2'>
                             <div className="text-[1rem] font-medium">{`Process ${processId}`}</div>
