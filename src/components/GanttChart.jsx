@@ -44,7 +44,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                         <div
                             key={process.processId}
                             style={{
-                                width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * 50}px` : `70px`}`,
+                                width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * 50}px` : `50px`}`,
                                 height: "100px",
                                 backgroundColor: process.color,
                                 display: "flex",
@@ -88,7 +88,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                                 <div
                                     key={process.processId}
                                     style={{
-                                        width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * 50}px` : `70px`}`,
+                                        width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * 50}px` : `50px`}`,
                                         height: "30px",
                                         color: "black",
                                         display: "flex",
