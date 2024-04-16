@@ -8,13 +8,10 @@ This project aims to create a visualization tool that will allow users to intera
 
 ## Project Objectives
 
-1. Implement CPU Scheduling Algorithms: Develop algorithms for First-Come, First-Served (FCFS), Shortest Job First (SJF), Priority, Preemptive Priority, Preemptive SJF / Shortest Remaining Time First (SRTF), Round Robin (RR), and Multilevel Feedback Queue (MLFQ) Scheduling.
-2. Visual Representation: Create graphical representations of the CPU, processes, and
-   scheduling events to provide users with a clear understanding of algorithm execution.
-3. Performance Metrics: Calculate and display performance metrics such as turnaround
-   time, waiting time, response time, and CPU utilization.
-4. User Interaction: Enable users to interact with the simulation by adjusting parameters,
-   starting/pausing/resetting the simulation, and analyzing results.
+1. Implementation CPU scheduling algorithms such as First-Come, First-Served (FCFS), Shortest Job First (SJF), Priority, Preemptive Priority, Preemptive SJF / Shortest Remaining Time First (SRTF), Round Robin (RR), and Multilevel Feedback Queue (MLFQ) Scheduling.
+2. Visual Representation: Created an intuitive graphical representations of the CPU, processes, and scheduling events to provide users with a clear understanding of algorithm execution.
+3. Performance Metrics: Calculate and display performance metrics such as turnaround time, waiting time, response time, and CPU utilization.
+4. User Interaction: Enable users to interact with the simulation by adjusting parameters, starting/resetting the simulation, and analyzing results.
 5. Comparison and Analysis: Provide tools for users to compare the performance of different scheduling algorithms and analyze the results.
 
 ## Project Scope
