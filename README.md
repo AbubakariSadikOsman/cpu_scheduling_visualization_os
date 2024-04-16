@@ -24,4 +24,14 @@ The project’s scope will not include low-level operating system implementation
 
 The CPU Scheduling Visualization Tool will provide an engaging and educational platform for exploring CPU scheduling algorithms. By meeting the objectives outlined above, our project aims to enhance understanding and facilitate learning in the field of operating systems. With clear objectives, well-defined scope, and appropriate technical requirements, we are confident that our project will result in a valuable and impactful educational tool.
 
-# How to host the application
+# How to host the application on a Local server
+
+1. Install nodejs on your machine [UNIX, Windows]: Refer to this link [https://nodejs.org/en/learn/getting-started/how-to-install-nodejs] on how to install nodejs
+
+2. Check to confirm successful installation of nodejs by checking the node version installed. Run this command on the terminal/shell: `node -v`
+
+3. Change your current directory to the `cpu simulation` directory
+
+4. Run this command on the terminal/shell: `npm run dev`
+
+5. Click on the local server link generated. E.g., [ http://localhost:5173/]
