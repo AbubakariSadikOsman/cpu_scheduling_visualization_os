@@ -81,11 +81,7 @@ function App() {
           executed={executed}
         />
       </div>
-      <GanttChart 
-        processes={isNonPreemptive ? newProcesses : updatedProcesses}
-        executed={executed}
-        selectedAlgorithm={selectedAlgorithm}
-      />
+      
       {executed ? 
         <div className='w-full bg-white my-10 flex flex-row gap-5'>
           <Statistics 
@@ -94,11 +90,16 @@ function App() {
             setProcesses={setProcesses}
             executed={executed}
           /> 
-          {executed ? 
+          <GanttChart 
+            processes={isNonPreemptive ? newProcesses : updatedProcesses}
+            executed={executed}
+            selectedAlgorithm={selectedAlgorithm}
+          />
+{/*           {executed ? 
         <CompareAlgorithmsChart
           metrics={statisticsData}
         /> : ''
-        }
+        } */}
         </div> : ''
         
       }
