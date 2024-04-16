@@ -4,7 +4,7 @@ const SelectAlgorithm = ({selectedAlgorithm, setSelectedAlgorithm}) => {
   return (
     <div className='w-2/3'>
       <h2 className='text-[1.4rem] mb-3 font-bold'>Select Algorithm</h2>
-      <div className='flex flex-col gap-5 text-[0.9rem]'>
+      <div className='flex flex-col gap-3 text-[0.9rem]'>
         <label>
           <input
             type="radio"
@@ -30,7 +30,7 @@ const SelectAlgorithm = ({selectedAlgorithm, setSelectedAlgorithm}) => {
             checked={selectedAlgorithm === 3}
             onChange={() => setSelectedAlgorithm(3)}
           />
-          Priority
+          Priority Based
         </label>
         <label>
           <input
@@ -48,7 +48,7 @@ const SelectAlgorithm = ({selectedAlgorithm, setSelectedAlgorithm}) => {
             checked={selectedAlgorithm === 5}
             onChange={() => setSelectedAlgorithm(5)}
           />
-          Shortest Time Remaining First
+          Preemptive SJF (SRTF)
         </label>
         <label>
           <input
@@ -57,7 +57,7 @@ const SelectAlgorithm = ({selectedAlgorithm, setSelectedAlgorithm}) => {
             checked={selectedAlgorithm === 6}
             onChange={() => setSelectedAlgorithm(6)}
           />
-          Round Robin
+          Round Robin 
         </label>
         <label>
           <input

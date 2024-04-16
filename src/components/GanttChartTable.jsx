@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const GanttChartTable = ({ selectedAlgorithm, processes, executed }) => {
     let usesPriority = (selectedAlgorithm === 3 || selectedAlgorithm === 4 || selectedAlgorithm === 7);

@@ -1,8 +1,8 @@
-const executeFCFS = (processes, num_of_process, setUpdatedProcesses) => {
+const executeFCFS = (processes, num_of_processes, setUpdatedProcesses) => {
     let current_time = 0;
     const newprocesses = [...processes];
 
-    for (let i = 0; i < num_of_process; i++) {
+    for (let i = 0; i < num_of_processes; i++) {
         if (newprocesses[i].arrivalTime > current_time)
             current_time = Number(newprocesses[i].arrivalTime);
         newprocesses[i].startTime = current_time;

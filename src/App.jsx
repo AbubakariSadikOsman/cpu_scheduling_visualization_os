@@ -10,11 +10,13 @@ function App() {
   const [processes, setProcesses] = useState([]);
   const [newProcesses, setUpdatedProcesses] = useState([]);
   const [selectedAlgorithm, setSelectedAlgorithm] = useState(0);
-  const [quantum, setQuantum] = useState(0);
   const [priority, setPriority] = useState(0);
   const [executed, setExecuted] = useState(false);
   const [statisticsData, setStatisticsData] = useState([]);
+  const [updatedProcesses, setAnotherUpatedProcesses] = useState([]);
 
+  let isNonPreemptive = (selectedAlgorithm === 1 || selectedAlgorithm === 2 || selectedAlgorithm === 3 || selectedAlgorithm === "");
+  
   // Function to delete a process by processId
   const onDeleteProcess = (processIdToDelete) => {
     setProcesses(prevProcesses =>
@@ -32,7 +34,7 @@ function App() {
   }
   
   return (
-    <div className='overflow-x-hidden mx-[5%] mb-[3.4rem]'>
+    <div className='overflow-x-hidden mx-[5%] mb-[1rem]'>
       <h1 className='text-[2.4rem] font-bold text-center mt-8'>CPU Scheduling Algorithms Visualization</h1>
       <ToastContainer />
       <div className='w-full bg-white my-6 flex flex-row gap-10'>
@@ -46,7 +48,6 @@ function App() {
             arrivalTime={arrivalTime} 
             burstTime={burstTime}
             priority={priority}
-            quantum={quantum}
             setProcessID={setProcessID}
             processes={processes}
             setProcesses={setProcesses}
@@ -54,10 +55,10 @@ function App() {
             setArrivalTime={setArrivalTime}
             setBurstTime={setBurstTime}
             setPriority={setPriority}
-            setQuantum={setQuantum}
             selectedAlgorithm={selectedAlgorithm}
             setExecuted={setExecuted}
             setStatisticsData={setStatisticsData}
+            setAnotherUpatedProcesses={setAnotherUpatedProcesses}
           />
         </div>
         
@@ -80,6 +81,11 @@ function App() {
           executed={executed}
         />
       </div>
+      <GanttChart 
+        processes={isNonPreemptive ? newProcesses : updatedProcesses}
+        executed={executed}
+        selectedAlgorithm={selectedAlgorithm}
+      />
       {executed ? 
         <div className='w-full bg-white my-10 flex flex-row gap-5'>
           <Statistics 
@@ -88,19 +94,14 @@ function App() {
             setProcesses={setProcesses}
             executed={executed}
           /> 
-          <GanttChart 
-            processes={newProcesses}
-            executed={executed}
-          />
-        </div> : ''
-      }
-      
-      {executed ? 
+          {executed ? 
         <CompareAlgorithmsChart
-        metrics={statisticsData}
-      /> : ''
+          metrics={statisticsData}
+        /> : ''
+        }
+        </div> : ''
+        
       }
-      
     </div>
   );
 }

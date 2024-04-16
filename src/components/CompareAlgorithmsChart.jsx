@@ -13,8 +13,8 @@ const CompareAlgorithmsChart = ({ metrics }) => {
                 yValueFormatString: "##.00 milliseconds",
                 name: metric.algorithm,
                 dataPoints: [
+                    { label: "Average Completion Time", y: parseFloat(metric.data.average_completion_time) },
                     { label: "Average Waiting Time", y: parseFloat(metric.data.average_waiting_time) },
-                    { label: "Average Response Time", y: parseFloat(metric.data.average_response_time) },
                     { label: "Average Turnaround Time", y: parseFloat(metric.data.average_turnaround_time) }
                 ]
             }));
@@ -51,9 +51,7 @@ const CompareAlgorithmsChart = ({ metrics }) => {
 
     return (
         <div className="w-full bg-gray-100 p-4 rounded-xl">
-            <div style={{ height: "400px" }}>
-                <CanvasJSChart options={{}} onRef={(ref) => (chartRef.current = ref)} />
-            </div>
+            <CanvasJSChart options={{}} onRef={(ref) => (chartRef.current = ref)} />
         </div>
     );
 };

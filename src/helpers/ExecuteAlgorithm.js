@@ -14,7 +14,7 @@ const MULTILEVEL_FEEDBACK_QUEUE = 7;
 
 
 
-const executeSelectedAlgorithm = (selectedAlgorithm, num_of_process, processes, setProcesses, setUpdatedProcesses, setExecuted, setStatisticsData) => {
+const executeSelectedAlgorithm = (selectedAlgorithm, num_of_processes, processes, setProcesses, setUpdatedProcesses, setExecuted, setStatisticsData, setAnotherUpatedProcesses) => {
     if (processes.length === 0) {
         toast.error("Please, add process(s)");
         return;
@@ -24,43 +24,43 @@ const executeSelectedAlgorithm = (selectedAlgorithm, num_of_process, processes, 
 
     switch (selectedAlgorithm) {
         case FCFS:
-            executeFCFS(processes, num_of_process, setUpdatedProcesses);
+            executeFCFS(processes, num_of_processes, setUpdatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "FCFS", data }]);
             break;
         case SJF:
-            executeSJF(processes, num_of_process, setUpdatedProcesses);
+            executeSJF(processes, num_of_processes, setUpdatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "SJF", data }]);
             break;
         case PRIORITY:
-            executePriority(processes, num_of_process, setUpdatedProcesses);
+            executePriority(processes, num_of_processes, setUpdatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "PRIORITY", data }]);
             break;
         case PREEMPTIVE_PRIORITY:
-            executePreemptivePriority(processes, num_of_process, setUpdatedProcesses);
+            executePreemptivePriority(processes, num_of_processes, setUpdatedProcesses, setAnotherUpatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "PRE_PRIORITY", data }]);
             break;
         case STRF:
-            executeSTRF(processes, num_of_process, setUpdatedProcesses);
+            executeSTRF(processes, num_of_processes, setUpdatedProcesses, setAnotherUpatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "STRF", data }]);
             break;
         case ROUND_ROBIN:
-            executeRoundRobin(processes, num_of_process, quantum, setUpdatedProcesses);
+            executeRoundRobin(processes, num_of_processes, setUpdatedProcesses, setAnotherUpatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "ROUND_ROBIN", data }]);
             break;
         case MULTILEVEL_FEEDBACK_QUEUE:
-            executeMultilevelFeedbackQueue(processes, num_of_process);
+            executeMultilevelFeedbackQueue(processes, num_of_processes, setUpdatedProcesses, setAnotherUpatedProcesses);
             setExecuted(true);
             data = computeStatistics(selectedAlgorithm, processes, setProcesses);
             setStatisticsData(prevData => [...prevData, { algorithm: "MLFQ", data }]);
