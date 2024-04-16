@@ -34,4 +34,4 @@ The CPU Scheduling Visualization Tool will provide an engaging and educational p
 
 4. Run this command on the terminal/shell: `npm run dev`
 
-5. Click on the local server link generated. E.g., [ http://localhost:5173/]
+5. Click on the local server link generated. E.g., [http://localhost:5173/]
