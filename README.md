@@ -30,7 +30,7 @@ The CPU Scheduling Visualization Tool will provide an engaging and educational p
 
 2. Check to confirm successful installation of nodejs by checking the node version installed. Run this command on the terminal/shell: `node -v`
 
-3. Change your current directory to the `cpu simulation` directory
+3. Change your current directory to the directory where project is located
 
 4. Run this command on the terminal/shell: `npm run dev`
 
