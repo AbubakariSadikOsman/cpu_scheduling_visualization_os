@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { CanvasJSChart } from 'canvasjs-react-charts';
+// import { CanvasJSChart } from 'canvasjs-react-charts';
 
 const CompareAlgorithmsChart = ({ metrics }) => {
     const chartRef = useRef(null);
@@ -48,10 +48,11 @@ const CompareAlgorithmsChart = ({ metrics }) => {
             }
         }
     }, [metrics]);
+    // <CanvasJSChart options={{}} onRef={(ref) => (chartRef.current = ref)} />
 
     return (
         <div className="w-full bg-gray-100 p-4 rounded-xl">
-            <CanvasJSChart options={{}} onRef={(ref) => (chartRef.current = ref)} />
+            
         </div>
     );
 };
