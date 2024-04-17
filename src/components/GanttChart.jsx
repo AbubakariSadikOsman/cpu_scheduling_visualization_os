@@ -45,7 +45,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                         <div
                             key={process.processId}
                             style={{
-                                width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * (size > 4 ? 20 : 50)}px` : `${size > 4 ? 20 : 50}px`}`,
+                                width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * (size > 4 ? 25 : 50)}px` : `${size > 4 ? 25 : 50}px`}`,
                                 height: "100px",
                                 backgroundColor: process.color,
                                 display: "flex",
@@ -65,7 +65,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                                 <div
                                     key={process.processId}
                                     style={{
-                                        width: `${(process.completionTime - process.startTime) * (size > 4 ? 20 : 50)}px`,
+                                        width: `${(process.completionTime - process.startTime) * (size > 4 ? 25 : 50)}px`,
                                         height: "30px",
                                         color: "black",
                                         display: "flex",
@@ -89,7 +89,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                                 <div
                                     key={process.processId}
                                     style={{
-                                        width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * (size > 4 ? 20 : 50)}px` : `${size > 4 ? 20 : 50}px`}`,
+                                        width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * (size > 4 ? 25 : 50)}px` : `${size > 4 ? 25 : 50}px`}`,
                                         height: "30px",
                                         color: "black",
                                         display: "flex",
