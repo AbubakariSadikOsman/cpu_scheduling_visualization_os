@@ -20,6 +20,17 @@ const executeRoundRobin = (processes, num_of_processes, setUpdatedProcesses, set
 
                 // Execute the process for one quantum time or until it completes
                 let execution_time = Math.min(current_process.remainingTime, quantum_time);
+
+                // Check if the next process has arrived before executing full quantum time
+                if (i < num_of_processes - 1) {
+                    let next_process = processes[i + 1];
+                    if (next_process.arrivalTime > current_time + execution_time) {
+                        // Next process has not arrived yet, execute current process till next arrival or completion
+                        execution_time += Math.min(current_process.remainingTime - execution_time, quantum_time);
+                        // execution_time = Math.min(next_process.arrivalTime - current_time, execution_time);
+                    }
+                }
+                
                 current_time += execution_time;
                 updated_processes.push({ ...current_process });
                 current_process.remainingTime -= execution_time;
