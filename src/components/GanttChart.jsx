@@ -107,7 +107,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                 
                 <div className='flex flex-row justify-center mt-10'>
                     {Object.entries(colorMap).map(([processId, color]) => (
-                        <div key={processId} className={`flex ${size > 5 ? 'flex-col' : 'flex-row'} justify-center items-center gap-2`}>
+                        <div key={processId} className={`flex ${size > 5 ? 'flex-col justify-center' : 'flex-row justify-center items-center'} gap-2`}>
                             <div className="text-[1rem] font-medium">{`Process ${processId}`}</div>
                             <div
                                 style={{width: "20px",
