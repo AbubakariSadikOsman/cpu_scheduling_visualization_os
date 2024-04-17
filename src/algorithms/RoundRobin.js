@@ -1,6 +1,6 @@
 const executeRoundRobin = (processes, num_of_processes, setUpdatedProcesses, setAnotherUpatedProcesses) => {
     const quantum_time = parseInt(prompt("Enter the Quantum Time:"));
-    if (quantum_time <= 0 || isNaN(quantum_time || quantum_time === null || quantum_time >= 10)) {
+    if (quantum_time <= 0 || quantum_time >= 10)) {
         alert("Invalid Quantum Time. Please enter a valid number such that 0 < number <= 10.");
         return;
     }
