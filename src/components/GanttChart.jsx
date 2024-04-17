@@ -25,6 +25,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
     let count = 0;
     let isNonPreemptive = (selectedAlgorithm === 1 || selectedAlgorithm === 2 || selectedAlgorithm === 3 || selectedAlgorithm === "");
     const colorMap = {};
+    const size = processes.length;
 
     processes.forEach(process => {
         const { processId } = process;
@@ -44,7 +45,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                         <div
                             key={process.processId}
                             style={{
-                                width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * 50}px` : `50px`}`,
+                                width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * (size > 4 ? 30 : 50)}px` : `50px`}`,
                                 height: "100px",
                                 backgroundColor: process.color,
                                 display: "flex",
@@ -64,7 +65,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                                 <div
                                     key={process.processId}
                                     style={{
-                                        width: `${(process.completionTime - process.startTime) * 50}px`,
+                                        width: `${(process.completionTime - process.startTime) * (size > 4 ? 30 : 50)}px`,
                                         height: "30px",
                                         color: "black",
                                         display: "flex",
@@ -88,7 +89,7 @@ const GanttChart = ({ processes, executed, selectedAlgorithm }) => {
                                 <div
                                     key={process.processId}
                                     style={{
-                                        width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * 50}px` : `50px`}`,
+                                        width: `${isNonPreemptive? `${(process.completionTime - process.startTime) * (size > 4 ? 30 : 50)}px` : `50px`}`,
                                         height: "30px",
                                         color: "black",
                                         display: "flex",
